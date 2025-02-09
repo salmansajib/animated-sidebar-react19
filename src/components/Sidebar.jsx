@@ -20,7 +20,7 @@ function Sidebar() {
         duration: 0.5,
         ease: "anticipate",
       }}
-      className="fixed top-0 left-0 w-80 h-full bg-zinc-700/50 backdrop-blur-md p-4 rounded-tr-[20px] rounded-br-[20px]"
+      className="sidebar fixed top-0 left-0 w-80 h-full bg-zinc-700/50 backdrop-blur-md p-4 rounded-tr-[15px] rounded-br-[15px]"
     >
       <div className="flex items-center justify-between mb-5">
         <button
@@ -34,6 +34,7 @@ function Sidebar() {
       <ul className="">
         <li>
           <a
+            onClick={toggleSidebar}
             className="hover:bg-blue-300 text-gray-50 hover:text-zinc-950 w-full h-10 flex items-center pl-3 rounded-md transition-colors duration-200 ease-in-out"
             href="#"
           >
@@ -42,6 +43,7 @@ function Sidebar() {
         </li>
         <li>
           <a
+            onClick={toggleSidebar}
             className="hover:bg-blue-300 text-gray-50 hover:text-zinc-950 w-full h-10 flex items-center pl-3 rounded-md transition-colors duration-200 ease-in-out"
             href="#"
           >
@@ -50,6 +52,7 @@ function Sidebar() {
         </li>
         <li>
           <a
+            onClick={toggleSidebar}
             className="hover:bg-blue-300 text-gray-50 hover:text-zinc-950 w-full h-10 flex items-center pl-3 rounded-md transition-colors duration-200 ease-in-out"
             href="#"
           >
@@ -58,6 +61,7 @@ function Sidebar() {
         </li>
         <li>
           <a
+            onClick={toggleSidebar}
             className="hover:bg-blue-300 text-gray-50 hover:text-zinc-950 w-full h-10 flex items-center pl-3 rounded-md transition-colors duration-200 ease-in-out"
             href="#"
           >
