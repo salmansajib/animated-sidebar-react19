@@ -1,7 +1,10 @@
 import { X } from "lucide-react";
 import { motion } from "motion/react";
+import { useSidebar } from "../context/SidebarContext";
 
-function Sidebar({ isOpen, toggleSidebar }) {
+function Sidebar() {
+  const { isOpen, toggleSidebar } = useSidebar();
+
   // Motion animation values
   const sidebarVariants = {
     hidden: { x: "-100%", opacity: 0 },
@@ -17,15 +20,17 @@ function Sidebar({ isOpen, toggleSidebar }) {
         duration: 0.5,
         ease: "anticipate",
       }}
-      className="fixed top-0 left-0 w-80 h-full bg-zinc-900/50 backdrop-blur-md p-4"
+      className="fixed top-0 left-0 w-80 h-full bg-zinc-700/50 backdrop-blur-md p-4 rounded-tr-[20px] rounded-br-[20px]"
     >
-      <button
-        onClick={toggleSidebar}
-        className="absolute top-4 right-4 hover:bg-blue-300 p-1 rounded-md cursor-pointer hover:text-zinc-950 transition-colors duration-200 ease-in-out"
-      >
-        <X />
-      </button>
-      <h2 className="font-semibold text-xl mb-5">Sidebar</h2>
+      <div className="flex items-center justify-between mb-5">
+        <button
+          onClick={toggleSidebar}
+          className="order-2 hover:bg-blue-300 p-1 rounded-md cursor-pointer hover:text-zinc-950 transition-colors duration-200 ease-in-out"
+        >
+          <X />
+        </button>
+        <h2 className="order-1 font-semibold text-xl">Sidebar</h2>
+      </div>
       <ul className="">
         <li>
           <a
