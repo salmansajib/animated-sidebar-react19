@@ -21,10 +21,15 @@ function Heading() {
         className="text-2xl font-semibold"
       >
         {isOpen ? (
-          <span className="text-indigo-300">Isn&apos;t it awesome!🥳</span>
+          <span className="bg-gradient-to-r from-red-300 to-blue-300 text-transparent bg-clip-text capitalize">
+            Isn&apos;t it awesome!
+          </span>
         ) : (
-          <span>Click on the menu to show the sidebar</span>
+          <span className="bg-gradient-to-r from-red-300 to-blue-300 text-transparent bg-clip-text capitalize">
+            Click on the menu to show the sidebar.
+          </span>
         )}
+        🥳
       </motion.h1>
     </div>
   );

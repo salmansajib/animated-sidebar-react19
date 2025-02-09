@@ -1,6 +1,7 @@
 import { X } from "lucide-react";
 import { motion } from "motion/react";
 import { useSidebar } from "../context/SidebarContext";
+import NavLinks from "./NavLinks";
 
 function Sidebar() {
   const { isOpen, toggleSidebar } = useSidebar();
@@ -17,58 +18,23 @@ function Sidebar() {
       initial="hidden"
       animate={isOpen ? "visible" : "hidden"}
       transition={{
-        duration: 0.5,
-        ease: "anticipate",
+        duration: 0.3,
+        ease: "easeInOut",
       }}
       className="sidebar fixed top-0 left-0 w-80 h-full bg-zinc-700/50 backdrop-blur-md p-4 rounded-tr-[15px] rounded-br-[15px]"
     >
       <div className="flex items-center justify-between mb-5">
         <button
           onClick={toggleSidebar}
-          className="order-2 hover:bg-blue-300 p-1 rounded-md cursor-pointer hover:text-zinc-950 transition-colors duration-200 ease-in-out"
+          className="order-2 bg-blue-300 hover:bg-red-200 px-0.5 py-0.2 rounded-md cursor-pointer text-zinc-950 transition-colors duration-200 ease-in-out"
         >
           <X />
         </button>
-        <h2 className="order-1 font-semibold text-xl">Sidebar</h2>
+        <h2 className="order-1 font-semibold text-xl uppercase text-blue-300">
+          Sidebar
+        </h2>
       </div>
-      <ul className="">
-        <li>
-          <a
-            onClick={toggleSidebar}
-            className="hover:bg-blue-300 text-gray-50 hover:text-zinc-950 w-full h-10 flex items-center pl-3 rounded-md transition-colors duration-200 ease-in-out"
-            href="#"
-          >
-            Home
-          </a>
-        </li>
-        <li>
-          <a
-            onClick={toggleSidebar}
-            className="hover:bg-blue-300 text-gray-50 hover:text-zinc-950 w-full h-10 flex items-center pl-3 rounded-md transition-colors duration-200 ease-in-out"
-            href="#"
-          >
-            About
-          </a>
-        </li>
-        <li>
-          <a
-            onClick={toggleSidebar}
-            className="hover:bg-blue-300 text-gray-50 hover:text-zinc-950 w-full h-10 flex items-center pl-3 rounded-md transition-colors duration-200 ease-in-out"
-            href="#"
-          >
-            Services
-          </a>
-        </li>
-        <li>
-          <a
-            onClick={toggleSidebar}
-            className="hover:bg-blue-300 text-gray-50 hover:text-zinc-950 w-full h-10 flex items-center pl-3 rounded-md transition-colors duration-200 ease-in-out"
-            href="#"
-          >
-            Contact
-          </a>
-        </li>
-      </ul>
+      <NavLinks />
     </motion.div>
   );
 }
