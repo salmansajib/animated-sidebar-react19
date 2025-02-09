@@ -9,7 +9,7 @@ const useSidebar = () => useContext(SidebarContext);
 
 const SidebarProvider = ({ children }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const toggleSidebar = () => setIsOpen(!isOpen);
+  const toggleSidebar = () => setIsOpen((prev) => !prev);
 
   // Close sidebar when clicking outside
   useEffect(() => {
