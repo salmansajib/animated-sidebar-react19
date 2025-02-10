@@ -50,7 +50,7 @@ function NavLinks() {
         }}
       />
 
-      <ul className="relative">
+      <ul className="relative space-y-2">
         {menuItems.map((item) => (
           <li key={item.id} ref={(el) => (listRef.current[item.id] = el)}>
             <a
@@ -59,7 +59,7 @@ function NavLinks() {
                 toggleSidebar();
               }}
               onMouseEnter={() => handleHover(item.id)}
-              className="relative text-gray-50 w-full h-10 flex items-center pl-3 rounded-md transition-colors duration-200 ease-in-out"
+              className="relative text-gray-50 text-xl font-light w-full h-10 flex items-center pl-3 rounded-md transition-colors duration-200 ease-in-out"
               href={item.href}
             >
               {item.label}
