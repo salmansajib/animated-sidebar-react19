@@ -43,7 +43,11 @@ function NavLinks() {
       <motion.div
         className="absolute left-0 w-full bg-blue-400 rounded-md"
         animate={{ top: position.top, height: position.height }}
-        transition={{ type: "spring", stiffness: 300, damping: 30 }}
+        transition={{
+          type: "spring",
+          stiffness: 220,
+          damping: 15,
+        }}
       />
 
       <ul className="relative">
